@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --black: #0A0A0A;
+    --navy: #0C1021;
+    --blue: #5079A5;
+    --gray: #A7B2C1;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.bg-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
