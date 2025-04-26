@@ -320,3 +320,96 @@ body{
 .right-arrow {
   right: 2rem;
 }
+
+#contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 4rem 5vw 4rem 5vw;
+    background-color: var(--navy);
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-left {
+    flex: 2 1 40%;
+    min-width: 280px;
+  }
+  
+  .contact-badge {
+    display: inline-block;
+    background-color: rgba(80, 121, 165, 0.1);
+    color: var(--blue);
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--blue);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-left h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+  
+  .contact-left p {
+    font-size: 1rem;
+    color: var(--gray);
+    max-width: 50ch;
+  }
+  
+  .contact-right {
+    flex: 1 1 40%;
+    min-width: 280px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray);
+    background-color: #101526;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: white;
+    resize: vertical;
+  }
+  
+  .form-submit button {
+    padding: 0.75rem 2rem;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-submit button:hover {
+    background-color: var(--gray);
+  }
