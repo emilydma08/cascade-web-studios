@@ -80,7 +80,7 @@ function changeProject(direction) {
   projectCards[currentIndex].classList.remove('active');
   currentIndex = (currentIndex + direction + totalProjects) % totalProjects;
   projectCards[currentIndex].classList.add('active');
-  const offset = -currentIndex * 100;
+  const offset = -currentIndex * 90;
   document.querySelector('.gallery-wrapper').style.transform = `translateX(${offset}%)`;
   updateArrowState();
 }
