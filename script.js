@@ -66,51 +66,47 @@ function checkInView() {
 
 window.addEventListener('scroll', checkInView);
 
+
 /* Gallery Arrows */
+let currentIndex = 0;
+const projectCards = document.querySelectorAll('.project-card');
+const totalProjects = projectCards.length;
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
 
-let galleryWrapper = document.querySelector('.gallery-wrapper');
-let leftArrow = document.querySelector('#left-arrow');
-let rightArrow = document.querySelector('#right-arrow');
-let totalCards = document.querySelectorAll('.project-card').length;
-let cardWidth = document.querySelector('.project-card').offsetWidth + 2; // account for the gap between cards
-let galleryWidth = galleryWrapper.offsetWidth; // Gallery container width
-let currentPosition = 0; // Keep track of the current position
+projectCards[currentIndex].classList.add('active');
 
-function updateArrows() {
-    // If at the beginning, disable left arrow
-    if (currentPosition <= 0) {
-        leftArrow.disabled = true;
-    } else {
-        leftArrow.disabled = false;
-    }
-
-    // If at the end, disable right arrow
-    if (currentPosition >= totalCards - 2) { // Since we want to show 2 cards
-        rightArrow.disabled = true;
-    } else {
-        rightArrow.disabled = false;
-    }
+function changeProject(direction) {
+  projectCards[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + direction + totalProjects) % totalProjects;
+  projectCards[currentIndex].classList.add('active');
+  const offset = -currentIndex * 100;
+  document.querySelector('.gallery-wrapper').style.transform = `translateX(${offset}%)`;
+  updateArrowState();
 }
 
-// Scroll to the left
+function updateArrowState() {
+  if (currentIndex === 0) {
+    leftArrow.classList.add('disabled');
+  } else {
+    leftArrow.classList.remove('disabled');
+  }
+  if (currentIndex === totalProjects - 1) {
+    rightArrow.classList.add('disabled');
+  } else {
+    rightArrow.classList.remove('disabled');
+  }
+}
+
 leftArrow.addEventListener('click', () => {
-    if (currentPosition > 0) {
-        currentPosition--;
-        galleryWrapper.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
-        updateArrows();
-    }
+  if (currentIndex > 0) {
+    changeProject(-1);
+  }
 });
-
-// Scroll to the right
 rightArrow.addEventListener('click', () => {
-    if (currentPosition < totalCards - 2) { // Allow only if there are more than 2 cards
-        currentPosition++;
-        galleryWrapper.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
-        updateArrows();
-    }
+  if (currentIndex < totalProjects - 1) {
+    changeProject(1);
+  }
 });
 
-// Initial arrow state update
-updateArrows();
-
-
+updateArrowState();

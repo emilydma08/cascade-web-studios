@@ -43,24 +43,65 @@
         <!--Our Work-->
         <section id="projects-gallery">
             <h2>Our Work</h2>
+            <div class="arrow left-arrow">&#8592</div>
             <div class="gallery-wrapper">
-                <div class="arrow left-arrow">&#8592</div>
                 <div class="project-card">
-                    <video src="assets/ink.mp4" muted loop></video>
+                    <video src="assets/example website navya.mp4" muted loop></video>
+                    <!--<div class="project-info">
+                        <h3>Mosaic</h3>
+                        <p>Website designed for TSA Webmasters for a fictious vegetarian restaurant</p>
+                    </div>-->
                 </div>
                 <div class="project-card">
-                    <video src="assets/ink.mp4" muted loop></video>
+                    <video src="assets/example website navya.mp4" muted loop></video>
                 </div>
-                <div class="project-card">
-                    <p>Coming soon!</p>
-                </div>
-                <div class="arrow right-arrow">&#8594</div>
             </div>
+            <div class="arrow right-arrow">&#8594</div>
         </section>
 
         <!--Our Services-->
 
         <!--Contact Us Form-->
+        <section id="contact-section">
+            <div class="contact-left">
+                <div class="contact-badge">Contact</div>
+                <h1>Let’s connect</h1>
+                <p>We’d love to hear about your project. Drop us a message and we’ll get back to you soon.</p>
+            </div>
+    
+            <div class="contact-right">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="697ed9e8-6a00-4d4f-bdbd-5117a77391dc">
+                  
+                    <!-- CHANGE REDIRECT LINK ONCE DEPLOYED -->
+                    <input type="hidden" name="redirect" value="http://127.0.0.1:3000/contactform2.html">
+                  
+                    <input type="hidden" name="send-confirmation-email" value="true">
+                                  <input type="hidden" name="subject" value="New Message from Cascade Web Studios">
+                    <input type="hidden" name="from_name" value="Cascade Web Studios">
+                  
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" required>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" required>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea name="message" rows="5" required></textarea>
+                    </div>
+                  
+                    <div class="form-submit">
+                      <button type="submit">Send</button>
+                    </div>
+                  </form>
+                  
+            </div>
+        </section>
 
         <!--Footer-->
 
