@@ -19,7 +19,7 @@ body, html{
     width: 100vw;
 }
 
-/*Hero Section*/
+/* Hero Section */
 .bg-video{
     position: fixed;
     top: 0;
@@ -49,7 +49,8 @@ body, html{
 
 .hero-text h4 {
     animation: slideInLeft 0.8s ease-out forwards;
-    animation-delay: 0.2s;    font-size: 1.1rem;
+    animation-delay: 0.2s;    
+    font-size: clamp(0.8rem, 2.2vw, 1.2rem);
     letter-spacing: 2px;
     font-family: 'Montserrat Alternates';
     font-weight: normal;
@@ -64,9 +65,9 @@ body, html{
 
 .hero-text h1{
     animation-delay: 0.5s;
-    font-size: 5rem;
+    font-size: clamp(1.25rem, 6vw, 4.5rem);
     margin: 0.1rem 0;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     font-family: 'Josefin Sans';
     overflow: hidden;
     white-space: nowrap;
@@ -79,13 +80,14 @@ body, html{
 .hero-text p{
     animation: slideInRight 0.8s ease-out forwards;
     animation-delay: 2.5s;    
-    font-size: 1.3rem;
+    font-size: clamp(0.70rem, 1.8vw, 1.1rem);
     letter-spacing: 1px;
     font-family: 'Montserrat Alternates';
+    padding: 0 3vw;
 }
 
 #down-arrow{
-    width: 6rem;
+    width: 5rem;
     height: auto;
     position: absolute;
     bottom: 13vh;
@@ -117,21 +119,27 @@ body, html{
 
 @keyframes typingFixed {
     from {
-      width: 0ch;
+      width: 0;
     }
     to {
-      width: 21.5ch;
+      width: 90%;
     }
   }
 
 @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    } 
-    50% {
-      transform: translateY(-20px);
-    }
+  0%, 100% {
+    transform: translateY(0);
+  } 
+  50% {
+    transform: translateY(-20px);
   }
+}
+
+@media only screen and (max-width: 950px) {
+}
+
+@media only screen and (max-width: 800px) {
+}
 
 
 /* About Section */
@@ -143,7 +151,7 @@ body, html{
     padding: 2.5rem;
 }
 
-.about-title, .about-text{
+.about-text{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,21 +159,42 @@ body, html{
 }
 
 .about-title{
-    width: 35%;
-    border-right: 10px solid white;
-    text-align: center;
+  box-sizing: border-box;
+  padding: 2rem 2.75rem 2rem 1.75rem;
+  padding-left: clamp(0.5rem, 2vw, 3rem);
+  width: 35%;
+  border-right: 1.5vw solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about-badge {
+  display: inline-block;
+  background-color: rgba(80, 121, 165, 0.1);
+  color: var(--blue);
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .about-title h2{
     font-family: 'Josefin Sans';
     position: relative;
-    font-size: 5.5rem;
-    letter-spacing: 3px;
+    font-size: clamp(2.3rem, 4.75vw, 5.5rem);
+    letter-spacing: 1px;
     margin: 0;
     color: white;
+    line-height: 1.3;
 }
 
-.about-title h2::after {
+/* .about-title h2::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -175,18 +204,18 @@ body, html{
   height: 2px;
   background: var(--blue);
   transition: width 1s ease-out;
-}
+} */
 
-.about-title h2.in-view::after {
+/* .about-title h2.in-view::after {
   width: 24vw;
-}
+} */
 
 .about-text{
-   width: 65%;
-   padding-right: 5%;
-   transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    opacity: 0;
+  width: 65%;
+  padding-right: 5%;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
 }
 
 .about-text.in-view{
@@ -197,9 +226,9 @@ body, html{
 
 .about-text p{
     font-family: 'Montserrat Alternates';
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.9rem);
     text-align: left;
-    width: 90%;
+    width: 95%;
     color: white;
 }
 
@@ -307,7 +336,7 @@ body, html{
   height: 100%;
   object-fit: contain;
   pointer-events: none;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .arrow.disabled {
