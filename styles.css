@@ -87,7 +87,7 @@ body, html{
 }
 
 #down-arrow{
-    width: 5rem;
+    width: 4.5rem;
     height: auto;
     position: absolute;
     bottom: 13vh;
@@ -135,8 +135,16 @@ body, html{
   }
 }
 
-@media only screen and (max-width: 950px) {
+@media (max-width: 600px) {
+  .hero-text h1{
+    white-space: normal;
+    overflow: visible;
+    width: auto;
+    animation: none;
+    font-size: 3rem;
+  }
 }
+
 
 @media only screen and (max-width: 800px) {
 }
@@ -144,7 +152,7 @@ body, html{
 
 /* About Section */
 #about-section{
-    height: 80vh;
+    height: 95vh;
     width: 100%;
     background-color: var(--navy);
     display: flex;
@@ -163,7 +171,7 @@ body, html{
   padding: 2rem 2.75rem 2rem 1.75rem;
   padding-left: clamp(0.5rem, 2vw, 3rem);
   width: 35%;
-  border-right: 1.5vw solid white;
+  border-right: 1vw solid white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -194,22 +202,6 @@ body, html{
     line-height: 1.3;
 }
 
-/* .about-title h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: var(--blue);
-  transition: width 1s ease-out;
-} */
-
-/* .about-title h2.in-view::after {
-  width: 24vw;
-} */
-
 .about-text{
   width: 65%;
   padding-right: 5%;
@@ -226,12 +218,39 @@ body, html{
 
 .about-text p{
     font-family: 'Montserrat Alternates';
-    font-size: clamp(1.2rem, 2.5vw, 1.9rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     text-align: left;
     width: 95%;
     color: white;
 }
 
+@media (max-width: 700px){
+  #about-section{
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  .about-title{
+    width: 100%;
+    border-right: none;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+
+  .about-text{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .about-text p{
+    text-align: center;
+  }
+}
 
 /* Project Gallery */
 #projects-gallery h2{

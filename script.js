@@ -1,27 +1,9 @@
+/* Hero Section Down Arrow*/
 document.getElementById("down-arrow").addEventListener("click", function () {
   document.getElementById("about-section").scrollIntoView({ behavior: "smooth" });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
-
-  const title = document.querySelector(".about-title h2");
-  if (title) {
-    observer.observe(title);
-  }
-});
-
+/* Transitions for About Section */
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -40,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   targets.forEach((el) => observer.observe(el));
 });
 
+/* Gallery Videos */
 document.querySelectorAll('.project-card video').forEach(video => {
   const parent = video.closest('.project-card');
 
@@ -53,6 +36,8 @@ document.querySelectorAll('.project-card video').forEach(video => {
   });
 });
 
+
+/* Gallery Title Animation */
 const h2Element = document.querySelector('#projects-gallery h2');
 
 function checkInView() {
