@@ -1,27 +1,9 @@
+/* Hero Section Down Arrow*/
 document.getElementById("down-arrow").addEventListener("click", function () {
   document.getElementById("about-section").scrollIntoView({ behavior: "smooth" });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
-
-  const title = document.querySelector(".about-title h2");
-  if (title) {
-    observer.observe(title);
-  }
-});
-
+/* Transitions for About Section */
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -40,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   targets.forEach((el) => observer.observe(el));
 });
 
+/* Gallery Videos */
 document.querySelectorAll('.project-card video').forEach(video => {
   const parent = video.closest('.project-card');
 
@@ -53,6 +36,8 @@ document.querySelectorAll('.project-card video').forEach(video => {
   });
 });
 
+
+/* Gallery Title Animation */
 const h2Element = document.querySelector('#projects-gallery h2');
 
 function checkInView() {
@@ -67,46 +52,52 @@ function checkInView() {
 window.addEventListener('scroll', checkInView);
 
 
-/* Gallery Arrows */
 let currentIndex = 0;
 const projectCards = document.querySelectorAll('.project-card');
 const totalProjects = projectCards.length;
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
-
-projectCards[currentIndex].classList.add('active');
+const container = document.querySelector('.gallery-container');
+const galleryWrapper = document.querySelector('.gallery-wrapper'); // <- this was missing
 
 function changeProject(direction) {
-  projectCards[currentIndex].classList.remove('active');
   currentIndex = (currentIndex + direction + totalProjects) % totalProjects;
-  projectCards[currentIndex].classList.add('active');
-  const offset = -currentIndex * 90;
-  document.querySelector('.gallery-wrapper').style.transform = `translateX(${offset}%)`;
+  const currentCard = projectCards[currentIndex];
+  const cardOffset = currentCard.offsetLeft;
+  const cardWidth = currentCard.offsetWidth;
+  const containerWidth = container.offsetWidth;
+
+  const scrollAmount = cardOffset - (containerWidth - cardWidth) / 2;
+  galleryWrapper.style.transform = `translateX(-${scrollAmount}px)`;
   updateArrowState();
 }
 
 function updateArrowState() {
-  if (currentIndex === 0) {
-    leftArrow.classList.add('disabled');
-  } else {
-    leftArrow.classList.remove('disabled');
-  }
-  if (currentIndex === totalProjects - 1) {
-    rightArrow.classList.add('disabled');
-  } else {
-    rightArrow.classList.remove('disabled');
-  }
+  leftArrow.classList.toggle('disabled', currentIndex === 0);
+  rightArrow.classList.toggle('disabled', currentIndex === totalProjects - 1);
 }
 
+// Add back missing event listeners
 leftArrow.addEventListener('click', () => {
   if (currentIndex > 0) {
     changeProject(-1);
   }
 });
+
 rightArrow.addEventListener('click', () => {
   if (currentIndex < totalProjects - 1) {
     changeProject(1);
   }
 });
 
-updateArrowState();
+// Initial alignment
+window.addEventListener('load', () => {
+  const firstCard = projectCards[0];
+  const cardOffset = firstCard.offsetLeft;
+  const cardWidth = firstCard.offsetWidth;
+  const containerWidth = container.offsetWidth;
+
+  const scrollAmount = cardOffset - (containerWidth - cardWidth) / 2;
+  galleryWrapper.style.transform = `translateX(-${scrollAmount}px)`;
+  updateArrowState();
+});
