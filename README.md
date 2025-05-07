@@ -1,3 +1,3 @@
 # cascade-web-studios
 
-#test edit ?
+Official website for Cascade Web Studios
