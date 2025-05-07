@@ -195,7 +195,7 @@ body, html{
 .about-title h2{
     font-family: 'Josefin Sans';
     position: relative;
-    font-size: clamp(2.3rem, 4.75vw, 5.5rem);
+    font-size: clamp(2.3rem, 4.7vw, 5.5rem);
     letter-spacing: 1px;
     margin: 0;
     color: white;
@@ -255,35 +255,34 @@ body, html{
 /* Project Gallery */
 #projects-gallery h2{
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 4rem;
+  font-size: clamp(2.3rem, 4.7vw, 5.5rem);
   color: white;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5vh;
+  margin-top: none;
   letter-spacing: 2px;
   position: relative;
   text-align: center;
 }
 
-#projects-gallery h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background-color: var(--blue);
-  transition: width 0.6s ease-out;
-}
-
-#projects-gallery h2.in-view::after {
-  width: 100%; 
+.gallery-badge {
+  display: inline-block;
+  background-color: rgba(80, 121, 165, 0.1);
+  color: var(--blue);
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 #projects-gallery {
   position: relative;
   max-width: 100vw;
   width: 100%;
-  max-height: 100vh;
+  height: auto;
   margin: 0 auto;
   overflow: hidden;
   background-color: var(--navy);
@@ -294,40 +293,50 @@ body, html{
   text-align: center; 
 }
 
+.gallery-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.gallery-container{
+  width: 80vw;
+  overflow: hidden;
+  position: relative;
+}
+
 .gallery-wrapper {
   display: flex;
   transition: transform 0.3s ease;
-  position: relative;
-  width: 80%;
+  width: max-content;
 }
 
 .project-card {
   min-width: 90%;
   max-width: 100%;
-  padding: 20px;
-  border-radius: 8px;
-  opacity: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  opacity: 1;
   transition: opacity 0.3s ease;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.project-card.active {
+/* .project-card.active {
   opacity: 1;
   margin-left: 60px;
-}
+} */
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  border-radius: 50%;
   border: none;
-  padding: 10px;
-  font-size: 20px;
+  padding: 1rem;
+  font-size: 2rem;
   cursor: pointer;
   z-index: 30;
 }
@@ -353,6 +362,7 @@ body, html{
 .project-card video {
   max-width: 100%;
   height: 100%;
+  max-height: 80vh;
   object-fit: contain;
   pointer-events: none;
   border-radius: 0px;
@@ -363,18 +373,6 @@ body, html{
   pointer-events: none;
 }
 
-.project-card p{
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  letter-spacing: 1px;
-}
 
 /* Contact Us Section */
 #contact-section {
