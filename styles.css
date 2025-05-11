@@ -467,3 +467,171 @@ body, html{
 .form-submit button:hover {
   background-color: var(--gray);
 }
+
+.portfolio-title-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.portfolio-title-text {
+  position: absolute;
+  bottom: 30px;
+  padding: 1rem 2rem;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s; 
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portfolio-title-text h2 {
+  font-family: 'Montserrat Alternates';
+  font-size: 100px;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.portfolio-title-text p {
+  font-family: 'Josefin Sans';
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #A7B2C1;
+}
+
+.portfolio-gray-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.portfolio-badge {
+  display: inline-block;
+  background-color: rgba(80, 121, 165, 0.1);
+  color: var(--blue);
+  padding: 0.5rem 1.25rem;
+  margin-top: 30px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+#project-overview{
+    height: 40vh;
+    width: 100%;
+    background-color: var(--navy);
+    display: flex;
+    padding: 2.5rem;
+}
+
+.overview-title{
+  box-sizing: border-box;
+  padding: 2rem 2.75rem 2rem 1.75rem;
+  padding-left: clamp(0.5rem, 2vw, 3rem);
+  width: 30%;
+  border-right: 0.3vw solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.overview-title h2{
+    font-family: 'Josefin Sans';
+    position: relative;
+    font-size: clamp(2.0rem, 4.0vw, 5.0rem);
+    letter-spacing: 1px;
+    margin: 0;
+    color: white;
+    line-height: 1.3;
+}
+
+.overview-text p{
+    display: flex;
+    padding: 2rem;
+    padding-left: 50px;
+    padding-bottom: 5px;
+    font-family: 'Josefin Sans';
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    text-align: left;
+    width: 95%;
+    color: white;
+}
+
+.overview-badge {
+  display: inline-block;
+  background-color: rgba(80, 121, 165, 0.1);
+  color: var(--blue);
+  padding: 0.5rem 1.25rem;
+  margin-left: 50px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.badge-row {
+  display: flex;
+  align-items: center;
+}
+
+.badge-row p {
+    display: flex;
+    padding: 2rem;
+    padding-left: 50px;
+    font-family: 'Josefin Sans';
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    text-align: left;
+    width: 95%;
+    color: #A7B2C1;
+}
+
+
+#website-screenshots{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--navy);
+    display: flex;
+    padding: 2.5rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
