@@ -1,3 +1,15 @@
+/* Nav Bar Scroll */
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 0) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+
 /* Hero Section Down Arrow*/
 document.getElementById("down-arrow").addEventListener("click", function () {
   document.getElementById("about-section").scrollIntoView({ behavior: "smooth" });

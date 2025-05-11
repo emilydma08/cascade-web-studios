@@ -4,12 +4,28 @@
     --black: #0A0A0A;
     --navy: #0C1021;
     --blue: #5079A5;
-    --gray: #A7B2C1;
+    --gray: #b7c0cc;
 }
 
 *{
   max-width: 100vw;
   box-sizing: border-box;
+}
+
+h2{
+  font-size: clamp(2rem, 4.1vw, 5rem);
+}
+
+.badge{
+  font-size: clamp(0.6rem, 0.8vw, 1rem);
+  background-color: rgba(80, 121, 165, 0.1);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  text-transform: uppercase;
 }
 
 body, html{
@@ -18,6 +34,35 @@ body, html{
     box-sizing: border-box;
     width: 100vw;
 }
+
+/* Nav Bar */
+nav {
+  position: fixed;
+  font-family: 'Montserrat Alternates', 'sans-serif';
+  top: 20px;
+  left: 10%;
+  width: 80%;
+  border-radius: 999px;
+  font-size: clamp(1rem, 1vw, 2rem);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+nav.scrolled {
+  background-color: rgb(56, 53, 53);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Hero Section */
 .bg-video{
@@ -83,7 +128,7 @@ body, html{
     font-size: clamp(0.70rem, 1.8vw, 1.1rem);
     letter-spacing: 1px;
     font-family: 'Montserrat Alternates';
-    padding: 0 3vw;
+    padding: 0 4vw;
 }
 
 #down-arrow{
@@ -171,7 +216,7 @@ body, html{
   padding: 2rem 2.75rem 2rem 1.75rem;
   padding-left: clamp(0.5rem, 2vw, 3rem);
   width: 35%;
-  border-right: 1vw solid white;
+  border-right: 0.5vw solid white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -180,22 +225,13 @@ body, html{
 
 .about-badge {
   display: inline-block;
-  background-color: rgba(80, 121, 165, 0.1);
-  color: var(--blue);
   padding: 0.5rem 1.25rem;
-  border: 1px solid var(--blue);
-  border-radius: 999px;
-  font-size: clamp(0.7rem, 2vw, 1.1rem);
-  font-weight: 500;
-  font-family: 'Montserrat Alternates';
-  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .about-title h2{
     font-family: 'Josefin Sans';
     position: relative;
-    font-size: clamp(2.3rem, 4.7vw, 5.5rem);
     letter-spacing: 1px;
     margin: 0;
     color: white;
@@ -205,6 +241,7 @@ body, html{
 .about-text{
   width: 65%;
   padding-right: 5%;
+  padding-left: 5%;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   opacity: 0;
@@ -218,11 +255,11 @@ body, html{
 
 .about-text p{
     font-family: 'Montserrat Alternates';
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-size: clamp(1.2rem, 1.5vw, 1.6rem);
     text-align: left;
     width: 95%;
     color: white;
-}
+  }
 
 @media (max-width: 700px){
   #about-section{
@@ -244,18 +281,17 @@ body, html{
     width: 100%;
     padding: 0;
     margin: 0;
-    align-items: center;
+    align-items: left;
   }
 
   .about-text p{
-    text-align: center;
+    text-align: left;
   }
 }
 
 /* Project Gallery */
 #projects-gallery h2{
   font-family: 'Josefin Sans', sans-serif;
-  font-size: clamp(2.3rem, 4.7vw, 5.5rem);
   color: white;
   margin-bottom: 1.5vh;
   margin-top: none;
@@ -266,15 +302,7 @@ body, html{
 
 .gallery-badge {
   display: inline-block;
-  background-color: rgba(80, 121, 165, 0.1);
-  color: var(--blue);
   padding: 0.5rem 1.25rem;
-  border: 1px solid var(--blue);
-  border-radius: 999px;
-  font-size: clamp(0.7rem, 2vw, 1.1rem);
-  font-weight: 500;
-  font-family: 'Montserrat Alternates';
-  text-transform: uppercase;
   margin-bottom: 0;
 }
 
@@ -325,11 +353,6 @@ body, html{
   align-items: center;
 }
 
-/* .project-card.active {
-  opacity: 1;
-  margin-left: 60px;
-} */
-
 .arrow {
   background: rgba(0, 0, 0, 0.5);
   color: white;
@@ -374,6 +397,84 @@ body, html{
 }
 
 
+
+/* Our Services Section */
+#services-section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: var(--navy);
+  color: white;
+  font-family: 'Montserrat Alternates', sans-serif;
+  max-width: 100vw;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+}
+
+#services-section h2{
+  text-align: center;
+}
+
+
+.services-badge{
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 0px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+.services-div{
+  background-color: rgb(40, 42, 58);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.redesign{
+  flex-basis: 45%;
+}
+
+.custom{
+  flex-basis: 45%;
+}
+
+.services-div h3{
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.services-div h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.services-div p {
+  margin-bottom: 1rem;
+  color: var(--gray);
+}
+
+.services-div ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+  color: var(--gray);
+}
+
+
+
 /* Contact Us Section */
 #contact-section {
   display: flex;
@@ -395,20 +496,13 @@ body, html{
 
 .contact-badge {
   display: inline-block;
-  background-color: rgba(80, 121, 165, 0.1);
-  color: var(--blue);
   padding: 0.5rem 1.25rem;
-  border: 1px solid var(--blue);
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
-.contact-left h1 {
+.contact-left h2 {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 3rem;
+  /*font-size: 3rem;*/
   margin: 0 0 1rem 0;
   line-height: 1.2;
 }
@@ -461,11 +555,24 @@ body, html{
   border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
+  font-family: 'Montserrat Alternates', sans-serif;
   transition: background-color 0.3s ease;
 }
 
 .form-submit button:hover {
   background-color: var(--gray);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7ac4ff;
+  box-shadow: 0 0 15px #7ac4ff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7ac4ff;
+  box-shadow: 0 0 15px #7ac4ff;
 }
 
 .portfolio-title-image {
