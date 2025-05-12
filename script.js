@@ -123,7 +123,6 @@ document.addEventListener('mousemove', (e) => {
   dot.style.left = `${x}px`;
   dot.style.top = `${y}px`;
 
-  // Add slight delay for smooth following effect
   outline.style.left = `${x}px`;
   outline.style.top = `${y}px`;
 });
