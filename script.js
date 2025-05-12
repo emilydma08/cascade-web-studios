@@ -89,7 +89,6 @@ function updateArrowState() {
   rightArrow.classList.toggle('disabled', currentIndex === totalProjects - 1);
 }
 
-// Add back missing event listeners
 leftArrow.addEventListener('click', () => {
   if (currentIndex > 0) {
     changeProject(-1);
@@ -102,7 +101,6 @@ rightArrow.addEventListener('click', () => {
   }
 });
 
-// Initial alignment
 window.addEventListener('load', () => {
   const firstCard = projectCards[0];
   const cardOffset = firstCard.offsetLeft;
@@ -112,4 +110,20 @@ window.addEventListener('load', () => {
   const scrollAmount = cardOffset - (containerWidth - cardWidth) / 2;
   galleryWrapper.style.transform = `translateX(-${scrollAmount}px)`;
   updateArrowState();
+});
+
+/* Custom Cursor Effect */
+const dot = document.querySelector('.cursor-dot');
+const outline = document.querySelector('.cursor-outline');
+
+document.addEventListener('mousemove', (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  dot.style.left = `${x}px`;
+  dot.style.top = `${y}px`;
+
+  // Add slight delay for smooth following effect
+  outline.style.left = `${x}px`;
+  outline.style.top = `${y}px`;
 });

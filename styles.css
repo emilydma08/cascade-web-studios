@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/* General Styles */
+
 :root {
     --black: #0A0A0A;
     --navy: #0C1021;
@@ -35,6 +37,43 @@ body, html{
     width: 100vw;
 }
 
+
+/* Custom Cursor */
+@media (min-width: 600px){
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+  }
+  
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease-out;
+  }
+}
+
+
+
 /* Nav Bar */
 nav {
   position: fixed;
@@ -59,7 +98,7 @@ nav {
 
 .nav-links{
   display: flex;
-  gap: 4rem;
+  gap: 7vw;
   margin-left: auto;
 }
 
@@ -71,7 +110,7 @@ nav {
   padding: 0.5rem 1.2rem;
   border-radius: 999px;
   text-decoration: none;
-  margin-left: 4rem;
+  margin-left: 7vw;
 }
 
 .nav-button .contact-button:hover{
@@ -771,3 +810,4 @@ nav.scrolled {
     grid-template-columns: 1fr;
   }
 }
+
