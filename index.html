@@ -12,15 +12,30 @@
           <div class="nav-logo">
             <img src="assets/down-arrow.png" alt="Logo">
           </div>
+
+          <div class="nav-desktop-container">
+            <div class="nav-links-desktop">
+              <a href="#about-section">About</a>
+              <a href="#projects-gallery">Work</a>
+              <a href="#services-section">Services</a>
+              <a href="#contact-section" class="contact-button">Contact</a>
+            </div>
+          </div>
+
+          <button class="nav-menu" id="hamburger">&#9776</button>
+
+          
+
+        </nav>
+        <div class="sidebar" id="sidebar">
+          <button class="close-sidebar" id="close-sidebar">&times;</button>
           <div class="nav-links">
             <a href="#about-section">About</a>
             <a href="#projects-gallery">Work</a>
             <a href="#services-section">Services</a>
+            <a href="#contact-section">Contact</a>
           </div>
-          <div class="nav-button">
-            <a href="#contact-section" class="contact-button">Contact</a>
-          </div>
-        </nav>
+        </div>
         
         <!--Hero Section-->
         <section class="hero">
@@ -60,30 +75,36 @@
             <div class="badge gallery-badge">Our Work</div>
             <h2>See What We Can Do</h2>
             <div class="gallery-nav">
-            <div class="arrow left-arrow">&#8592</div>
+            <div class="arrow left-arrow">
+              <img src="assets/2849832_arrows_navigation_arrow_left_back_icon.png">
+            </div>
 
             <div class="gallery-container">
                 <div class="gallery-wrapper">
                     <div class="project-card">
+                      <a href="mosaic.html">
                         <video src="assets/Mosaic Screen Recording.mov" muted loop></video>
-                    </div>
+                      </a>                    </div>
                     <div class="project-card">
+                      <a href="job-listing.html">
                         <video src="assets/Job Listing Site.mp4" muted loop></video>
-                    </div>
+                      </a>                    </div>
                 </div>
             </div>
 
-            <div class="arrow right-arrow">&#8594</div>
+            <div class="arrow right-arrow">
+              <img src="assets/2849833_arrows_navigation_forward_arrow_right_icon.png">
+            </div>
             </div>
         </section>
 
         <!--Our Services-->
         <section id="services-section">
             <div class="badge services-badge">Our Services</div>
-            <h2>How We Can Meet Your Needs</h2>
+            <h2>What We Offer</h2>
             <div class="services-container">
                 <div class="services-div redesign">
-                  <h3>Website Redesign</h3>
+                  <h3>Website Redesign <span class="free-badge">Free</span></h3>
                   <p>Modernize your existing site to improve aesthetics, usability, and performance.</p>
                   <ul>
                     <li>Modern UI for improved design</li>
@@ -97,7 +118,7 @@
                 </div>
             
                 <div class="services-div custom">
-                  <h3>Custom Website</h3>
+                  <h3>Custom Website <span class="free-badge">Free</span></h3>
                   <p>We build fully tailored websites from the ground up to match your brand and goals.</p>
                   <ul>
                     <li>Tailored design to match brand</li>
@@ -161,5 +182,50 @@
           <div class="cursor-outline"></div>
         </div>
         <script src="script.js"></script>   
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.getElementById('hamburger');
+          const sidebar = document.getElementById('sidebar');
+          const closeBtn = document.getElementById('close-sidebar');
+
+          hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+
+          document.addEventListener('click', (e) => {
+            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+            if (!isClickInside) {
+              sidebar.classList.remove('active');
+            }
+          });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.getElementById('nav-menu');
+          const sidebar = document.getElementById('sidebar');
+          const closeBtn = document.getElementById('close-sidebar');
+
+          hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+
+          document.addEventListener('click', (e) => {
+            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+            if (!isClickInside) {
+              sidebar.classList.remove('active');
+            }
+          });
+        });
+
+        </script>
+        
+        
   </body>
 </html>
