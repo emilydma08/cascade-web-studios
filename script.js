@@ -37,6 +37,7 @@ document.getElementById("down-arrow").addEventListener("click", function () {
   document.getElementById("about-section").scrollIntoView({ behavior: "smooth" });
 });
 
+
 /* Transitions for About Section */
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
@@ -86,53 +87,32 @@ function checkInView() {
 window.addEventListener('scroll', checkInView);
 
 
-let currentIndex = 0;
-const projectCards = document.querySelectorAll('.project-card');
-const totalProjects = projectCards.length;
+/* Gallery Video Scrolling */
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 const container = document.querySelector('.gallery-container');
-const galleryWrapper = document.querySelector('.gallery-wrapper'); // <- this was missing
 
-function changeProject(direction) {
-  currentIndex = (currentIndex + direction + totalProjects) % totalProjects;
-  const currentCard = projectCards[currentIndex];
-  const cardOffset = currentCard.offsetLeft;
-  const cardWidth = currentCard.offsetWidth;
-  const containerWidth = container.offsetWidth;
-
-  const scrollAmount = cardOffset - (containerWidth - cardWidth) / 2;
-  galleryWrapper.style.transform = `translateX(-${scrollAmount}px)`;
-  updateArrowState();
-}
+const scrollAmount = 200;
 
 function updateArrowState() {
-  leftArrow.classList.toggle('disabled', currentIndex === 0);
-  rightArrow.classList.toggle('disabled', currentIndex === totalProjects - 1);
+  const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  leftArrow.classList.toggle('disabled', container.scrollLeft <= 0);
+  rightArrow.classList.toggle('disabled', container.scrollLeft >= maxScrollLeft - 1);
 }
 
+updateArrowState();
+
 leftArrow.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    changeProject(-1);
-  }
+  container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 });
 
 rightArrow.addEventListener('click', () => {
-  if (currentIndex < totalProjects - 1) {
-    changeProject(1);
-  }
+  container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 });
 
-window.addEventListener('load', () => {
-  const firstCard = projectCards[0];
-  const cardOffset = firstCard.offsetLeft;
-  const cardWidth = firstCard.offsetWidth;
-  const containerWidth = container.offsetWidth;
+container.addEventListener('scroll', updateArrowState);
 
-  const scrollAmount = cardOffset - (containerWidth - cardWidth) / 2;
-  galleryWrapper.style.transform = `translateX(-${scrollAmount}px)`;
-  updateArrowState();
-});
+container.addEventListener('scrollend', updateArrowState); 
 
 
 
