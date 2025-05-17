@@ -1,249 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cascade Web Studios</title>
-        <link rel="stylesheet" href="styles.css">
-        <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
 
-    </head>
-    <body>
-        <!--Nav bar-->
-        <nav id="navbar">
-          <div class="nav-logo">
-            <img src="assets/down-arrow.png" alt="Logo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cascade Web Studios</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <!--Nav bar-->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="assets/down-arrow.png" alt="Logo">
+    </div>
+
+    <div class="nav-desktop-container">
+      <div class="nav-links-desktop">
+        <a href="#about-section">About</a>
+        <a href="#projects-gallery">Work</a>
+        <a href="#services-section">Services</a>
+        <a href="#contact-section" class="contact-button">Contact</a>
+      </div>
+    </div>
+
+    <button class="nav-menu" id="hamburger">&#9776</button>
+  </nav>
+  <div class="sidebar" id="sidebar">
+    <button class="close-sidebar" id="close-sidebar">&times;</button>
+    <div class="nav-links">
+      <a href="#about-section">About</a>
+      <a href="#projects-gallery">Work</a>
+      <a href="#services-section">Services</a>
+      <a href="#contact-section">Contact</a>
+    </div>
+  </div>
+
+  <!--Hero Section-->
+  <section class="hero">
+    <video autoplay loop muted playsinline class="bg-video">
+      <source src="assets/ink.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      <h4>We are</h4>
+      <div class="typewriter-wrapper">
+        <h1>CASCADE WEB STUDIOS</h1>
+      </div>
+      <p>A non-profit providing free web design & development services to non-profits, small businesses, and community
+        organizations</p>
+    </div>
+
+    <img src="assets/down-arrow.png" alt="down arrow" id="down-arrow">
+  </section>
+
+  <!--Our Mission-->
+  <section id="about-section">
+    <div class="about-title">
+      <div class="badge about-badge animate-badge">About Us</div>
+      <h2 class="animate-h2">Who We Are</h2>
+    </div>
+    <div class="about-text animate-text">
+      <p>We’re a dedicated team of high school students on a mission to provide free website design and
+        development services to small businesses and organizations.
+        <br></br>
+        Whether you need a website redesign or a brand-new site, we will work closely with you to meet your
+        specific needs. With a strong focus on design, functionality, and ease of use, we will ensure your site
+        brings your online presence to life
+      </p>
+    </div>
+  </section>
+
+
+  <!--Our Work-->
+  <section id="projects-gallery">
+    <div class="badge gallery-badge animate-gallery-badge">Our Work</div>
+    <h2 class="animate-gallery-h2">What We've Built</h2>
+    <div class="gallery-nav">
+      <div class="arrow left-arrow">
+        <img src="assets/2849832_arrows_navigation_arrow_left_back_icon.png">
+      </div>
+
+      <div class="gallery-container">
+        <div class="gallery-wrapper">
+          <div class="project-card">
+            <a href="mosaic.html">
+              <video src="assets/Mosaic Screen Recording.mov" muted loop></video>
+            </a>
           </div>
-
-          <div class="nav-desktop-container">
-            <div class="nav-links-desktop">
-              <a href="#about-section">About</a>
-              <a href="#projects-gallery">Work</a>
-              <a href="#services-section">Services</a>
-              <a href="#contact-section" class="contact-button">Contact</a>
-            </div>
-          </div>
-
-          <button class="nav-menu" id="hamburger">&#9776</button>
-        </nav>
-        <div class="sidebar" id="sidebar">
-          <button class="close-sidebar" id="close-sidebar">&times;</button>
-          <div class="nav-links">
-            <a href="#about-section">About</a>
-            <a href="#projects-gallery">Work</a>
-            <a href="#services-section">Services</a>
-            <a href="#contact-section">Contact</a>
+          <div class="project-card">
+            <a href="job-listing.html">
+              <video src="assets/Job Listing Site.mp4" muted loop></video>
+            </a>
           </div>
         </div>
-        
-        <!--Hero Section-->
-        <section class="hero">
-            <video autoplay loop muted playsinline class="bg-video">
-                <source src="assets/ink.mp4" type="video/mp4">
-            </video>
-            <div class="hero-text">
-                <h4>We are</h4>
-                <div class="typewriter-wrapper">
-                    <h1>CASCADE WEB STUDIOS</h1>
-                  </div>
-                <p>A non-profit providing  free web design & development services to non-profits, small businesses, and community organizations</p>
-            </div>
+      </div>
 
-            <img src="assets/down-arrow.png" alt="down arrow" id="down-arrow">
-        </section>
-        
-        <!--Our Mission-->
-        <section id="about-section">
-            <div class="about-title">
-                <div class="badge about-badge animate-badge">About Us</div>
-                <h2 class="animate-h2">Who We Are</h2>
-            </div>
-            <div class="about-text animate-text">
-                <p>We’re a dedicated team of high school students on a mission to provide free website design and
-                    development services to small businesses and organizations. 
-                    <br></br>
-                    Whether you need a website redesign or a brand-new site, we will work closely with you to meet your
-                specific needs. With a strong focus on design, functionality, and ease of use, we will ensure your site
-            brings your online presence to life</p>
-            </div>
-        </section>
+      <div class="arrow right-arrow">
+        <img src="assets/2849833_arrows_navigation_forward_arrow_right_icon.png">
+      </div>
+    </div>
+  </section>
 
+  <!--Our Services-->
+  <section id="services-section">
+    <div class="badge services-badge animate-services-badge">Our Services</div>
+    <h2 class="animate-services-h2">Solutions We Offer</h2>
+    <div class="services-container">
+      <div class="services-div redesign animate-service-1">
+        <h3>Website Redesign <span class="free-badge">Free</span></h3>
+        <p>Modernize your existing site to improve aesthetics, usability, and performance.</p>
+        <ul>
+          <li>Modern UI for improved design</li>
+          <li>Mobile-friendly for all devices</li>
+          <li>Enhanced user experience and flow</li>
+          <li>Clear, engaging content layout</li>
+          <li>Speed and search optimization</li>
+          <li>Better online brand consistency</li>
+          <li>Customizable design to fit needs</li>
+        </ul>
+      </div>
 
-        <!--Our Work-->
-        <section id="projects-gallery">
-            <div class="badge gallery-badge animate-gallery-badge">Our Work</div>
-            <h2 class="animate-gallery-h2">What We've Built</h2>
-            <div class="gallery-nav">
-            <div class="arrow left-arrow">
-              <img src="assets/2849832_arrows_navigation_arrow_left_back_icon.png">
-            </div>
+      <div class="services-div custom animate-service-2">
+        <h3>Custom Website <span class="free-badge">Free</span></h3>
+        <p>We build fully tailored websites from the ground up to match your brand and goals.</p>
+        <ul>
+          <li>Tailored design to match brand</li>
+          <li>Custom functionality based on needs</li>
+          <li>Optimized for local search visibility</li>
+          <li>Flexible layout for future growth</li>
+          <li>Unique design for standout online presence</li>
+          <li>Seamless integration with third-party tools</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-            <div class="gallery-container">
-                <div class="gallery-wrapper">
-                    <div class="project-card">
-                      <a href="mosaic.html">
-                        <video src="assets/Mosaic Screen Recording.mov" muted loop></video>
-                      </a>                    </div>
-                    <div class="project-card">
-                      <a href="job-listing.html">
-                        <video src="assets/Job Listing Site.mp4" muted loop></video>
-                      </a>                    </div>
-                </div>
-            </div>
+  <!--Contact Us Form-->
+  <section id="contact-section">
+    <div class="contact-left">
+      <div class="badge contact-badge animate-contact-badge">Contact</div>
+      <h2 class="animate-contact-h2">Let’s Connect</h2>
+      <p class="animate-contact-p">We’d love to hear about your project. Drop us a message and we’ll get back to you
+        soon.</p>
+    </div>
 
-            <div class="arrow right-arrow">
-              <img src="assets/2849833_arrows_navigation_forward_arrow_right_icon.png">
-            </div>
-            </div>
-        </section>
+    <div class="contact-right">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="697ed9e8-6a00-4d4f-bdbd-5117a77391dc">
 
-        <!--Our Services-->
-        <section id="services-section">
-            <div class="badge services-badge animate-services-badge">Our Services</div>
-            <h2 class="animate-services-h2">Solutions We Offer</h2>
-            <div class="services-container">
-                <div class="services-div redesign animate-service-1">
-                  <h3>Website Redesign <span class="free-badge">Free</span></h3>
-                  <p>Modernize your existing site to improve aesthetics, usability, and performance.</p>
-                  <ul>
-                    <li>Modern UI for improved design</li>
-                    <li>Mobile-friendly for all devices</li>
-                    <li>Enhanced user experience and flow</li>
-                    <li>Clear, engaging content layout</li>
-                    <li>Speed and search optimization</li>
-                    <li>Better online brand consistency</li>
-                    <li>Customizable design to fit needs</li>
-                  </ul>
-                </div>
-            
-                <div class="services-div custom animate-service-2">
-                  <h3>Custom Website <span class="free-badge">Free</span></h3>
-                  <p>We build fully tailored websites from the ground up to match your brand and goals.</p>
-                  <ul>
-                    <li>Tailored design to match brand</li>
-                    <li>Custom functionality based on needs</li>
-                    <li>Optimized for local search visibility</li>
-                    <li>Flexible layout for future growth</li>
-                    <li>Unique design for standout online presence</li>
-                    <li>Seamless integration with third-party tools</li>
-                  </ul>
-                </div>
-              </div>
-        </section>
+        <input type="hidden" name="redirect" value="https://www.cascadewebstudios.org/#contact-section">
 
-        <!--Contact Us Form-->
-        <section id="contact-section">
-            <div class="contact-left">
-              <div class="badge contact-badge animate-contact-badge">Contact</div>
-                <h2 class="animate-contact-h2">Let’s Connect</h2>
-                <p class="animate-contact-p">We’d love to hear about your project. Drop us a message and we’ll get back to you soon.</p>
-            </div>
-    
-            <div class="contact-right">
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="697ed9e8-6a00-4d4f-bdbd-5117a77391dc">
-                  
-                    <input type="hidden" name="redirect" value="https://www.cascadewebstudios.org/#contact-section">
-                  
-                    <input type="hidden" name="send-confirmation-email" value="true">
-                                  <input type="hidden" name="subject" value="New Message from Cascade Web Studios">
-                    <input type="hidden" name="from_name" value="Cascade Web Studios">
-                  
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" name="name" required>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" name="email" required>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="message">Message</label>
-                      <textarea name="message" rows="5" required></textarea>
-                    </div>
-                  
-                    <div class="form-submit">
-                      <button type="submit">Send</button>
-                    </div>
-                  </form>
-                  
-            </div>
-        </section>
+        <input type="hidden" name="send-confirmation-email" value="true">
+        <input type="hidden" name="subject" value="New Message from Cascade Web Studios">
+        <input type="hidden" name="from_name" value="Cascade Web Studios">
 
-
-        <!--Footer-->
-        <footer class="site-footer">
-            <div class="footer-content">
-              <div class="footer-icons">
-                <a href="mailto:team@cascadewebstudios.org" aria-label="Email">
-                  <i class="fa-solid fa-envelope"></i>
-                </a>
-                <!--FIX LINKEDIN LINK WHEN CREATED-->
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-              </div>
-              <p>&copy; 2025 Cascade Web Studios. All rights reserved.</p>
-              <p>Cascade Web Studios is a registered nonprofit organization. Not a 501(c)(3).</p>
-            </div>
-          </footer>
-          
-        
-
-
-        <!--Other-->
-        <div class="custom-cursor">
-          <div class="cursor-dot"></div>
-          <div class="cursor-outline"></div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" required>
         </div>
-        <script src="script.js"></script>   
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-          const hamburger = document.getElementById('hamburger');
-          const sidebar = document.getElementById('sidebar');
-          const closeBtn = document.getElementById('close-sidebar');
 
-          hamburger.addEventListener('click', () => {
-            sidebar.classList.add('active');
-          });
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" required>
+        </div>
 
-          closeBtn.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-          });
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" rows="5" required></textarea>
+        </div>
 
-          document.addEventListener('click', (e) => {
-            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
-            if (!isClickInside) {
-              sidebar.classList.remove('active');
-            }
-          });
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-          const hamburger = document.getElementById('nav-menu');
-          const sidebar = document.getElementById('sidebar');
-          const closeBtn = document.getElementById('close-sidebar');
+        <div class="form-submit">
+          <button type="submit">Send</button>
+        </div>
+      </form>
 
-          hamburger.addEventListener('click', () => {
-            sidebar.classList.add('active');
-          });
+    </div>
+  </section>
 
-          closeBtn.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-          });
 
-          document.addEventListener('click', (e) => {
-            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
-            if (!isClickInside) {
-              sidebar.classList.remove('active');
-            }
-          });
-        });
+  <!--Footer-->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-icons">
+        <a href="mailto:team@cascadewebstudios.org" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <!--FIX LINKEDIN LINK WHEN CREATED-->
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+      <p>&copy; 2025 Cascade Web Studios. All rights reserved.</p>
+      <p>Cascade Web Studios is a registered nonprofit organization. Not a 501(c)(3).</p>
+    </div>
+  </footer>
 
-        </script>
-        
-        
-  </body>
+
+
+
+  <!--Other-->
+  <div class="custom-cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const sidebar = document.getElementById('sidebar');
+      const closeBtn = document.getElementById('close-sidebar');
+
+      hamburger.addEventListener('click', () => {
+        sidebar.classList.add('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+        if (!isClickInside) {
+          sidebar.classList.remove('active');
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('nav-menu');
+      const sidebar = document.getElementById('sidebar');
+      const closeBtn = document.getElementById('close-sidebar');
+
+      hamburger.addEventListener('click', () => {
+        sidebar.classList.add('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+        if (!isClickInside) {
+          sidebar.classList.remove('active');
+        }
+      });
+    });
+
+  </script>
+
+
+</body>
+
 </html>
