@@ -858,6 +858,14 @@ nav.scrolled {
   gap: 1.5rem;
 }
 
+.badge.contact-badge:hover {
+  background-color: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
 .form-group {
   display: flex;
   flex-direction: column;
