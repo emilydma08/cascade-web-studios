@@ -730,7 +730,7 @@ nav.scrolled {
   flex-wrap: wrap;
   margin-top: none;
   gap: 4rem;
-  padding: 4rem 5vw 4rem 5vw;
+  padding: 0.1rem 5vw 4rem 5vw;
   background-color: var(--navy);
   font-family: 'Montserrat Alternates', sans-serif;
   color: white;
