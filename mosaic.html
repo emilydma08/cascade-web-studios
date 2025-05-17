@@ -21,7 +21,33 @@
 </style>
 
 <body>
-    <!--Nav bar-->
+            <!--Nav bar-->
+        <nav id="navbar">
+          <div class="nav-logo">
+            <img src="assets/down-arrow.png" alt="Logo">
+          </div>
+
+          <div class="nav-desktop-container">
+            <div class="nav-links-desktop">
+              <a href="#about-section">About</a>
+              <a href="#projects-gallery">Work</a>
+              <a href="#services-section">Services</a>
+              <a href="#contact-section" class="contact-button">Contact</a>
+            </div>
+          </div>
+
+          <button class="nav-menu" id="hamburger">&#9776</button>
+        </nav>
+        <div class="sidebar" id="sidebar">
+          <button class="close-sidebar" id="close-sidebar">&times;</button>
+          <div class="nav-links">
+            <a href="#about-section">About</a>
+            <a href="#projects-gallery">Work</a>
+            <a href="#services-section">Services</a>
+            <a href="#contact-section">Contact</a>
+          </div>
+        </div>
+
     <section class="portfolio-title-image" style="background-image: url(assets/mosaic_bg.jpeg); ">
     <div class="portfolio-gray-overlay" style="background-color: rgba(0, 0, 0, 0.55);"></div>
         <div class="portfolio-title-text" style="left: 30px; text-align: left; width: 50%;">
@@ -39,12 +65,17 @@
             <h2>Project Overview</h2>
         </div>
         <div class="overview-text">
-            <p>Features such as an add-to-cart functionality, a clear navigation path, and an embedded ingredients map benefit the user experience and make the 
+            <div class="overview-content">
+                <p>Features such as an add-to-cart functionality, a clear navigation path, and an embedded ingredients map benefit the user experience and make the 
                 website more effective. Design choices such as the color scheme, font, and images reflect the values of the restaurant while remaining modern and on-trend.</p>
-            <div class="badge-row">
-                <div class="overview-badge">TECHNOLOGY</div>
-                <p> HTML, CSS, Bootstrap CSS, JavaScript</p>
+                <div class="badge-row">
+                    <div class="badge-with-text">
+                        <div class="badge overview-badge">TECHNOLOGY</div>
+                        <p>HTML, CSS, Bootstrap CSS, JavaScript</p>
+                    </div>
+                </div>
             </div>
+         </div>
         </div>
     </section>
 
@@ -54,6 +85,76 @@
              <img src="assets/mosaic_img2.jpeg" alt="Screenshot 2" />
             <img src="assets/mosaic_img3.jpeg" alt="Screenshot 3" />
             <img src="assets/mosaic_img4.jpeg" alt="Screenshot 4" />
-  </div>
+        </div>
     </section>
+
+            <!--Footer-->
+        <footer class="site-footer">
+            <div class="footer-content">
+              <div class="footer-icons">
+                <a href="mailto:team@cascadewebstudios.org" aria-label="Email">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <!--FIX LINKEDIN LINK WHEN CREATED-->
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+              <p>&copy; 2025 Cascade Web Studios. All rights reserved.</p>
+              <p>Cascade Web Studios is a registered nonprofit organization. Not a 501(c)(3).</p>
+            </div>
+          </footer>
+          
+        
+
+
+        <!--Other-->
+        <div class="custom-cursor">
+          <div class="cursor-dot"></div>
+          <div class="cursor-outline"></div>
+        </div>
+        <script src="script.js"></script>   
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.getElementById('hamburger');
+          const sidebar = document.getElementById('sidebar');
+          const closeBtn = document.getElementById('close-sidebar');
+
+          hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+
+          document.addEventListener('click', (e) => {
+            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+            if (!isClickInside) {
+              sidebar.classList.remove('active');
+            }
+          });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.getElementById('nav-menu');
+          const sidebar = document.getElementById('sidebar');
+          const closeBtn = document.getElementById('close-sidebar');
+
+          hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+
+          document.addEventListener('click', (e) => {
+            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+            if (!isClickInside) {
+              sidebar.classList.remove('active');
+            }
+          });
+        });
+
+        </script>
 </body>
