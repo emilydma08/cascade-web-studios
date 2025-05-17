@@ -993,3 +993,28 @@ nav.scrolled {
   }
 }
 
+/*Footer*/
+.site-footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-icons {
+  margin-top: 1rem;
+}
+
+.footer-icons a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.8rem; /* Bigger icons */
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #bbb;
+}
+
