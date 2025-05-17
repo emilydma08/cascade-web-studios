@@ -23,10 +23,36 @@
 </style>
 
 <body>
-    <!--Nav bar-->
+            <!--Nav bar-->
+        <nav id="navbar">
+          <div class="nav-logo">
+            <img src="assets/down-arrow.png" alt="Logo">
+          </div>
+
+          <div class="nav-desktop-container">
+            <div class="nav-links-desktop">
+              <a href="#about-section">About</a>
+              <a href="#projects-gallery">Work</a>
+              <a href="#services-section">Services</a>
+              <a href="#contact-section" class="contact-button">Contact</a>
+            </div>
+          </div>
+
+          <button class="nav-menu" id="hamburger">&#9776</button>
+        </nav>
+        <div class="sidebar" id="sidebar">
+          <button class="close-sidebar" id="close-sidebar">&times;</button>
+          <div class="nav-links">
+            <a href="#about-section">About</a>
+            <a href="#projects-gallery">Work</a>
+            <a href="#services-section">Services</a>
+            <a href="#contact-section">Contact</a>
+          </div>
+        </div>
+
     <section class="portfolio-title-image" style="background-image: url(assets/job_listing_bg.png); ">
-        <div class="portfolio-gray-overlay" style="background-color: rgba(0, 0, 0, 0.7);"></div>
-        <div class="portfolio-title-text" style="right: 30px; text-align: right; width: 60%">
+    <div class="portfolio-gray-overlay" style="background-color: rgba(0, 0, 0, 0.7);"></div>
+        <div class="portfolio-title-text" style="margin-left: auto; text-align: right; width: 60%">
             <h2>Job Listing Site</h2>
             <p>Allows authenticated companies to add and update job listings. </p>
             <div class="portfolio-badge">VISIT WEBSITE ⨠</div>
@@ -44,8 +70,10 @@
                 editing. Uses HTML, blade components,
                 and frameworks from Tailwind CSS to display all jobs. </p>
             <div class="badge-row">
-                <div class="overview-badge">TECHNOLOGY</div>
-                <p> PHP/Laravel with Herd, Blade components, SQLite, Tailwind CSS </p>
+                <div class="badge-with-text">
+                    <div class="badge overview-badge">TECHNOLOGY</div>
+                     <p> PHP/Laravel with Herd, Blade components, SQLite, Tailwind CSS </p>
+                </div>
             </div>
         </div>
     </section>
@@ -59,20 +87,71 @@
         </div>
     </section>
 
-    <!--Footer-->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-icons">
+            <!--Footer-->
+        <footer class="site-footer">
+            <div class="footer-content">
+              <div class="footer-icons">
                 <a href="mailto:team@cascadewebstudios.org" aria-label="Email">
-                    <i class="fa-solid fa-envelope"></i>
+                  <i class="fa-solid fa-envelope"></i>
                 </a>
                 <!--FIX LINKEDIN LINK WHEN CREATED-->
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
+                  <i class="fa-brands fa-linkedin"></i>
                 </a>
+              </div>
+              <p>&copy; 2025 Cascade Web Studios. All rights reserved.</p>
+              <p>Cascade Web Studios is a registered nonprofit organization. Not a 501(c)(3).</p>
             </div>
-            <p>&copy; 2025 Cascade Web Studios. All rights reserved.</p>
-            <p>Cascade Web Studios is a registered nonprofit organization. Not a 501(c)(3).</p>
+          </footer>
+          
+        
+        <!--Other-->
+        <div class="custom-cursor">
+          <div class="cursor-dot"></div>
+          <div class="cursor-outline"></div>
         </div>
-    </footer>
+        <script src="script.js"></script>   
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.getElementById('hamburger');
+          const sidebar = document.getElementById('sidebar');
+          const closeBtn = document.getElementById('close-sidebar');
+
+          hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+
+          document.addEventListener('click', (e) => {
+            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+            if (!isClickInside) {
+              sidebar.classList.remove('active');
+            }
+          });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.getElementById('nav-menu');
+          const sidebar = document.getElementById('sidebar');
+          const closeBtn = document.getElementById('close-sidebar');
+
+          hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+          });
+
+          closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+          });
+
+          document.addEventListener('click', (e) => {
+            const isClickInside = sidebar.contains(e.target) || hamburger.contains(e.target);
+            if (!isClickInside) {
+              sidebar.classList.remove('active');
+            }
+          });
+        });
+
+        </script>
 </body>
