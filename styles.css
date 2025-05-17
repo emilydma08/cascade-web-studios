@@ -368,6 +368,39 @@ nav.scrolled {
     padding-top: 10vh;
 }
 
+.animate-h2,
+.animate-badge,
+.animate-text{
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.animate-h2 {
+  transform: translateX(-50px);
+}
+
+.animate-text {
+  transform: translateX(50px);
+  transition: all 1.4s ease;
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-badge.animate-visible {
+  transition-delay: 0.4s;
+}
+
+.animate-h2.animate-visible {
+  transition-delay: 0s;
+}
+
+.animate-text.animate-visible {
+  transition-delay: 0.65s;
+}
+
 .about-text{
     display: flex;
     align-items: center;
@@ -406,15 +439,6 @@ nav.scrolled {
   width: 65%;
   padding-right: 5%;
   padding-left: 5%;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  opacity: 0;
-}
-
-.about-text.in-view{
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.3s;
 }
 
 .about-text p{
@@ -423,7 +447,7 @@ nav.scrolled {
     text-align: left;
     width: 95%;
     color: white;
-  }
+}
 
 @media (max-width: 700px){
   #about-section{
@@ -572,6 +596,33 @@ nav.scrolled {
   pointer-events: none;
 }
 
+.animate-gallery-h2,
+.animate-gallery-badge {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.animate-gallery-h2 {
+  transform: translateY(40px);
+}
+
+.animate-gallery-badge {
+  transform: scale(0.95);
+}
+
+.animate-gallery-h2.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.animate-gallery-badge.animate-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.4s;
+}
+
+
 
 
 /* Our Services Section */
@@ -679,6 +730,39 @@ nav.scrolled {
   vertical-align: middle;
   font-family: sans-serif;
 }
+
+.animate-services-h2,
+.animate-services-badge,
+.animate-service-1,
+.animate-service-2 {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.animate-services-h2 {
+  transform: translateY(40px);
+}
+.animate-services-h2.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.animate-services-badge.animate-visible {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.animate-service-1.animate-visible {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
+
+.animate-service-2.animate-visible {
+  opacity: 1;
+  transition-delay: 0.9s;
+}
+
 
 
 @media (max-width: 900px) {
@@ -824,6 +908,34 @@ nav.scrolled {
   border-color: #7ac4ff;
   box-shadow: 0 0 15px #7ac4ff;
 }
+
+
+.animate-contact-h2,
+.animate-contact-badge,
+.animate-contact-p {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.animate-contact-h2.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+
+.animate-contact-badge.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.animate-contact-p.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+
 
 .portfolio-title-image {
   position: relative;
