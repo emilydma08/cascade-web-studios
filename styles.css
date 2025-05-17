@@ -858,6 +858,14 @@ nav.scrolled {
   gap: 1.5rem;
 }
 
+.badge.contact-badge:hover {
+  background-color: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -1142,7 +1150,8 @@ nav.scrolled {
   color: #eee;
   text-align: center;
   padding: 2rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .footer-icons {
@@ -1152,7 +1161,7 @@ nav.scrolled {
 .footer-icons a {
   color: #eee;
   text-decoration: none;
-  font-size: 1.8rem; /* Bigger icons */
+  font-size: 1.8rem; 
   margin: 0 1rem;
   transition: color 0.3s ease;
 }
