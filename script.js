@@ -34,28 +34,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* Hero Section Down Arrow*/
 document.getElementById("down-arrow").addEventListener("click", function () {
-  document.getElementById("about-section").scrollIntoView({ behavior: "smooth" });
-});
+  const target = document.getElementById("about-section");
+  const offset = -100; // change this value to adjust how far up you want to scroll
 
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset + offset;
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth"
+  });
+});
 
 /* Transitions for About Section */
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        }
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('animate-visible');
+              observer.unobserve(entry.target); // run once
+          }
       });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+  }, { threshold: 0.3 });
 
-  const targets = document.querySelectorAll(".about-title h2, .about-text");
-  targets.forEach((el) => observer.observe(el));
+  const elements = document.querySelectorAll('.animate-h2, .animate-badge, .animate-text');
+  elements.forEach(el => observer.observe(el));
 });
+
+/* Gallery Transitions */
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-visible');
+        observer.unobserve(entry.target); // run once
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const elements = document.querySelectorAll(
+    '.animate-h2, .animate-badge, .animate-text, .animate-gallery-h2, .animate-gallery-badge'
+  );
+  elements.forEach(el => observer.observe(el));
+});
+
 
 /* Gallery Videos */
 document.querySelectorAll('.project-card video').forEach(video => {
@@ -72,19 +93,22 @@ document.querySelectorAll('.project-card video').forEach(video => {
 });
 
 
-/* Gallery Title Animation */
-const h2Element = document.querySelector('#projects-gallery h2');
+/* Services Animations */
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-visible');
+        observer.unobserve(entry.target); // only run once
+      }
+    });
+  }, { threshold: 0.3 });
 
-function checkInView() {
-  const rect = h2Element.getBoundingClientRect();
-  if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-    h2Element.classList.add('in-view');
-  } else {
-    h2Element.classList.remove('in-view');
-  }
-}
-
-window.addEventListener('scroll', checkInView);
+  const elements = document.querySelectorAll(
+    '.animate-h2, .animate-badge, .animate-text, .animate-gallery-h2, .animate-gallery-badge, .animate-services-h2, .animate-services-badge, .animate-service-1, .animate-service-2'
+  );
+  elements.forEach(el => observer.observe(el));
+});
 
 
 /* Gallery Video Scrolling */
@@ -115,6 +139,23 @@ container.addEventListener('scroll', updateArrowState);
 container.addEventListener('scrollend', updateArrowState); 
 
 
+/* Contact Us Animations */
+document.addEventListener('DOMContentLoaded', () => {
+  const contactElements = document.querySelectorAll(
+    '.animate-contact-h2, .animate-contact-badge, .animate-contact-p'
+  );
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  contactElements.forEach(el => observer.observe(el));
+});
 
 /* Custom Cursor Effect */
 const dot = document.querySelector('.cursor-dot');
