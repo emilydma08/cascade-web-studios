@@ -999,7 +999,8 @@ nav.scrolled {
   color: #eee;
   text-align: center;
   padding: 2rem 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .footer-icons {
@@ -1009,7 +1010,7 @@ nav.scrolled {
 .footer-icons a {
   color: #eee;
   text-decoration: none;
-  font-size: 1.8rem; /* Bigger icons */
+  font-size: 1.8rem; 
   margin: 0 1rem;
   transition: color 0.3s ease;
 }
