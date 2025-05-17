@@ -814,7 +814,7 @@ nav.scrolled {
   flex-wrap: wrap;
   margin-top: none;
   gap: 4rem;
-  padding: 4rem 5vw 4rem 5vw;
+  padding: 0.1rem 5vw 4rem 5vw;
   background-color: var(--navy);
   font-family: 'Montserrat Alternates', sans-serif;
   color: white;
@@ -1103,5 +1103,30 @@ nav.scrolled {
   .image-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/*Footer*/
+.site-footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-icons {
+  margin-top: 1rem;
+}
+
+.footer-icons a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.8rem; /* Bigger icons */
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #bbb;
 }
 
