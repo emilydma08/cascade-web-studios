@@ -627,7 +627,7 @@ nav.scrolled {
 
 /* Our Services Section */
 #services-section {
-  padding: 4rem 0;
+  padding: 0.2rem 0;
   background-color: var(--navy);
   color: white;
   font-family: 'Montserrat Alternates', sans-serif;
