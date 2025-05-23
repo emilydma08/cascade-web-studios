@@ -13,9 +13,11 @@
 <body>
   <!--Nav bar-->
   <nav id="navbar">
-    <div class="nav-logo">
-      <img src="assets/cws_logo_3-removebg-preview.png" alt="Logo">
-    </div>
+    <a href="#hero-section">
+      <div class="nav-logo">
+        <img src="assets/cws_logo_3-removebg-preview.png" alt="Logo">
+      </div>
+    </a>
 
     <div class="nav-desktop-container">
       <div class="nav-links-desktop">
@@ -37,15 +39,9 @@
       <a href="#contact-section">Contact</a>
     </div>
   </div>
-        <nav id="navbar">
-            <a href="#about-section">About</a>
-            <a href="#gallery-section">Work</a>
-            <a href="#contact-section">Services</a>
-            <a href="#contact-section">Contact</a>
-          </nav>
-
+        
   <!--Hero Section-->
-  <section class="hero">
+  <section class="hero" id="hero-section">
     <video autoplay loop muted playsinline class="bg-video">
       <source src="assets/ink.mp4" type="video/mp4">
     </video>
@@ -92,12 +88,12 @@
         <div class="gallery-wrapper">
           <div class="project-card">
             <a href="mosaic.html">
-              <video src="assets/Mosaic Screen Recording.mov" muted loop></video>
+              <video src="assets/Mosaic Screen Recording.mov" muted loop autoplay playsinline></video>
             </a>
           </div>
           <div class="project-card">
             <a href="job-listing.html">
-              <video src="assets/Job Listing Site.mp4" muted loop></video>
+              <video src="assets/Job Listing Site.mp4" muted loop autoplay playsinline></video>
             </a>
           </div>
         </div>
