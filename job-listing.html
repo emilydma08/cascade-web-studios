@@ -112,7 +112,6 @@
           <div class="cursor-dot"></div>
           <div class="cursor-outline"></div>
         </div>
-        <script src="script.js"></script>   
         <script>
           document.addEventListener('DOMContentLoaded', () => {
           const hamburger = document.getElementById('hamburger');
@@ -155,5 +154,20 @@
           });
         });
 
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            dot.style.left = `${x}px`;
+            dot.style.top = `${y}px`;
+
+            outline.style.left = `${x}px`;
+            outline.style.top = `${y}px`;
+        });
+
         </script>
+        <script src="script.js"></script>   
 </body>
