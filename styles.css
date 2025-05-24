@@ -358,11 +358,13 @@ nav.scrolled {
     overflow: visible;
     width: auto;
     animation: none;
-    font-size: clamp(1.1rem, 5vw, 3rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    padding: 0 3vw;
   }
 
   .hero-text p{
     font-size: clamp(0.5rem, 2vw, 1rem);
+    animation-delay: 1s;
   }
 
   .hero-section{
