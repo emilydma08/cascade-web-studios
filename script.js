@@ -1,3 +1,15 @@
+/* Lenis RAF Scrolling */
+const lenis = new Lenis();
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
+
 /* Nav Bar Scroll Effect */
 const navbar = document.getElementById('navbar');
 
@@ -10,7 +22,6 @@ window.addEventListener('scroll', () => {
 });
 
 /* Nav Bar Link Scrolling */
-// Select all nav links that have hashes (#)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
