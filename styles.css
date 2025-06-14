@@ -31,13 +31,28 @@ h2{
   text-transform: uppercase;
 }
 
+h2{
+  font-size: clamp(2rem, 4.1vw, 5rem);
+}
+
+.badge{
+  font-size: clamp(0.6rem, 0.8vw, 1rem);
+  background-color: rgba(80, 121, 165, 0.1);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 500;
+  font-family: 'Montserrat Alternates';
+  text-transform: uppercase;
+}
+
 body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     width: 100vw;
 }
-
 
 /* Custom Cursor */
 @media (min-width: 600px){
@@ -48,7 +63,7 @@ body, html{
     pointer-events: none;
     z-index: 10000;
   }
-  
+
   .cursor-dot {
     width: 8px;
     height: 8px;
@@ -60,7 +75,7 @@ body, html{
     transform: translate(-50%, -50%);
     z-index: 1000;
   }
-  
+
   .cursor-outline {
     width: 40px;
     height: 40px;
@@ -74,8 +89,6 @@ body, html{
     z-index: 1000;
   }
 }
-
-
 
 /* Nav Bar */
 nav {
@@ -159,7 +172,7 @@ nav.scrolled {
   .nav-links-desktop, .nav-button-desktop{
     display: none;
   }
-  
+
   .nav-menu {
     display: block; 
     font-size: 1.8rem;
@@ -220,11 +233,7 @@ nav.scrolled {
     color: #d5e2ed;
     text-decoration: none;
   }
-  
-
-  
 }
-
 
 
 /* Hero Section */
@@ -273,7 +282,7 @@ nav.scrolled {
 
 .hero-text h1{
     animation-delay: 0.5s;
-    font-size: clamp(1.25rem, 6vw, 4.5rem);
+    font-size: clamp(1.1rem, 6vw, 4rem);
     margin: 0.1rem 0;
     letter-spacing: 4px;
     font-family: 'Josefin Sans';
@@ -349,13 +358,20 @@ nav.scrolled {
     overflow: visible;
     width: auto;
     animation: none;
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    padding: 0 3vw;
+  }
+
+  .hero-text p{
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    animation-delay: 1s;
+  }
+
+  .hero-section{
+    padding: 0 7vw;
   }
 }
 
-
-@media only screen and (max-width: 800px) {
-}
 
 
 /* About Section */
@@ -366,6 +382,7 @@ nav.scrolled {
     display: flex;
     padding: 2.5rem;
     padding-top: 10vh;
+    align-items: center;
 }
 
 .animate-h2,
@@ -402,11 +419,18 @@ nav.scrolled {
 }
 
 .about-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  width: 65%;
+  padding-right: 5%;
+  padding-left: 5%;
 }
+
+.about-title, .about-text{
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .about-title{
   box-sizing: border-box;
@@ -435,11 +459,6 @@ nav.scrolled {
     line-height: 1.3;
 }
 
-.about-text{
-  width: 65%;
-  padding-right: 5%;
-  padding-left: 5%;
-}
 
 .about-text p{
     font-family: 'Montserrat Alternates';
@@ -447,7 +466,7 @@ nav.scrolled {
     text-align: left;
     width: 95%;
     color: white;
-}
+  }
 
 @media (max-width: 700px){
   #about-section{
@@ -466,14 +485,20 @@ nav.scrolled {
   }
 
   .about-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 0;
     margin: 0;
-    align-items: left;
   }
 
   .about-text p{
     text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1vh;
+    text-align: center;
   }
 }
 
@@ -559,7 +584,7 @@ nav.scrolled {
 }
 
 .arrow img{
-  width: 3rem;
+  width: clamp(1.5rem, 4vw, 3rem);
 }
 
 .left-arrow {
@@ -640,6 +665,7 @@ nav.scrolled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10vh;
   text-align: center; 
 }
 
@@ -736,7 +762,7 @@ nav.scrolled {
 .animate-service-1,
 .animate-service-2 {
   opacity: 0;
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
 }
 
 .animate-services-h2 {
@@ -750,17 +776,17 @@ nav.scrolled {
 
 .animate-services-badge.animate-visible {
   opacity: 1;
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
 }
 
 .animate-service-1.animate-visible {
   opacity: 1;
-  transition-delay: 0.6s;
+  transition-delay: 0.2s;
 }
 
 .animate-service-2.animate-visible {
   opacity: 1;
-  transition-delay: 0.9s;
+  transition-delay: 0.2s;
 }
 
 
@@ -776,7 +802,7 @@ nav.scrolled {
   }
 
   .services-div {
-    width: 100%;
+    width: 90%;
     max-width: 600px;
     text-align: left;
   }
@@ -805,9 +831,6 @@ nav.scrolled {
   }
 }
 
-
-
-
 /* Contact Us Section */
 #contact-section {
   display: flex;
@@ -818,7 +841,6 @@ nav.scrolled {
   background-color: var(--navy);
   font-family: 'Montserrat Alternates', sans-serif;
   color: white;
-  height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -943,6 +965,21 @@ nav.scrolled {
   transform: translateX(0);
   transition-delay: 0.5s;
 }
+
+@media (max-width: 900px) {
+  #contact-section{
+    padding: 0 7vh;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+    height: auto;
+    padding-bottom: 5vh;
+  }
+}
+
+
+
 
 /* Portfolio Pages */
 .portfolio-title-image {
