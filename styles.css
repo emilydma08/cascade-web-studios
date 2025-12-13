@@ -564,6 +564,7 @@ nav.scrolled {
 .project-card {
   flex: 0 0 auto;
   width: clamp(200px, 60vw, 750px);
+  max-height: 400px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
